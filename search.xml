@@ -54,37 +54,6 @@
     
     
     <entry>
-      <title>Github 图床折腾手记</title>
-      <link href="/Anzhiyu/2024/10/03/Github%E5%9B%BE%E5%BA%8A%E6%8A%98%E8%85%BE%E6%89%8B%E8%AE%B0/"/>
-      <url>/Anzhiyu/2024/10/03/Github%E5%9B%BE%E5%BA%8A%E6%8A%98%E8%85%BE%E6%89%8B%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<p>图床，一个我个人经常使用，但是又没有固定选择的东西。</p><p>之前尝试过 <a href="https://www.luogu.com.cn/image">洛谷图床</a>，<a href="https://www.imgse.com/">路过图床</a>，<a href="https://sm.ms/">SM.MS</a> 等一些国内可以访问且相对知名的图床。</p><p>洛谷图床主要是验证码很烦，储存空间也小，而且不支持读取剪贴板，所以最后就弃坑了。</p><p>路过图床之前是我的主力图床，使用相当方便（除了有时候网站访问很慢），但是每天只能传 8 张图，日常使用还行，写题解（个人喜欢在题解里加入一堆图片），博客的时候完全不够用啊……</p><p>所以后来发现了 SM.MS，同样很好用，服务器架在国外但是速度甚至比路过图床还快。没有上传数量限制，但是每个用户限制 5 GB 储存空间，完全够用，但是有个限制在哪就挺烦的……</p><p><img src="https://chocolateater.github.io/PicHub/202409292036840.png" alt="image-20240929203605657"></p><p><em>SM.MS 用户界面</em></p><p>而且最重要的是以上所有图床都和 Typora&#x2F;TypeDown 不兼容…… 导致我得浏览器——编辑器来回切换……</p><p>懒，而且嫌烦，所以最终，我找到了 PicGo。</p><p><img src="https://chocolateater.github.io/PicHub/202409292035835.png"></p><p><em>PicGo 用户界面</em></p><p>第一次认识 PicGo 是在刚入坑 Github 的时候，那时候的主力 Markdown 编辑器还是 TypeDown，折腾过一天用于配置 PicGo，但是最后没成功。现在想想可能是当时开着加速器导致上传证书验证失败，而且那会儿也非常的愚蠢，报错了也没去百度，最后就不了了之了。</p><p>后来，突发奇想，想整个 Typora 玩玩，但是没钱……</p><p>所以又折腾了半天，手动破解了 Typora。然后发现能换主题欸 (╹ڡ╹ )，于是又花了半天翻找各种主题……</p><p><del>我们颜值至上主义者是这样的</del></p><p>最后的最后，我在 Typora 的设置里发现了这样的一小句话：</p><p><img src="https://chocolateater.github.io/PicHub/202409292040158.png" alt="image-20240929204011114"></p><p>当时不知道怎么就脑抽了…… 把 PicGo 下了回来。</p><p>浅浅配置好之后就十分兴奋的上传了一张图片试试。</p><p>不出意外，出意外了。</p><p><img src="https://chocolateater.github.io/PicHub/202409292042905.png" alt="image-20240929204209862"></p><p>不过起码会翻译了，跑去百度翻译一查，“无法验证第一证书”。</p><p>第一反应是我的 Github Token 权限没配置好，所以最后把原来的 Fine-grained Token 换成了权限更高的 Classical Token（教程是这么说的……），顺带把能勾选的选项全勾上了。</p><p>但回去，一看，还是不行，报错的提示都一样。</p><p>算了，还得是度娘。</p><p>查出来的结果也很离谱，居然是加速器的问题……</p><p>把加速器关了就没这回事了。</p><p>离谱。</p><p>至此，我以为总算搞定了…… 随手就把 Typora 和 PicGo 绑上了。</p><p>测试了一下，能上传，于是开始兴高采烈的搬迁图库。</p><p>最后链接提出来一看，白干~</p><p><img src="https://chocolateater.github.io/PicHub//202409292051438.png" alt="image-20240929205104261"></p><p>学乖了，直接百度。</p><p>结果是这个玩意儿需要梯子。</p><p>我寻思梯子我有归我有，但最后这坨东西是要放洛谷上去的，总不能让每个看的人都先挂上梯子吧…… <del>看起来像是推销节点的</del></p><blockquote><p>由于一些不可抗力，请您在阅读本篇博客前准备好一个能够访问 <a href="https://raw.githubusercontent.com/">https://raw.githubusercontent.com</a> 的**，我们推荐您使用 **节点，0.3 KB&#x2F;S 带宽不限速，每月只要 999 ~ 注册时优惠邀请码记得填 **** ……</p></blockquote><p>听起来就离谱。</p><p>所以当时我就想到一些奇技淫巧。</p><p>比如，把这个图床包装成一个基于 Github Pages 的网站。</p><p>正好<del>我会</del> Ai会 写 Ci（提交时运行的工作流），每次上传图片的时候自动部署，简单快捷，主要是不要动手，完全自动化。</p><p>效果不错，PicGo 也可以自定义域名，结合起来运行的很流畅。</p><p>唯一可惜是 Github 部署 Pages 需要一点时间，不过我觉得问题不大。</p><p>至此，终于搞定了。</p><p>虽然听起来挺少，但也折腾了我一个星期呢…… QAQ</p><hr><p>事实上，此前我还尝试过基于 TeleGraph 的自建图床，当时是被 <a href="https://www.luogu.com/user/1056150">黑客少年</a> 的 <a href="https://image.zhaohonghao-qwq.com/">图床</a> 忽悠入坑的，因为感觉还不错，而且据说储存空间无限，所以就心动了……</p><p>网上扒了教程，注册了 CF 的账号，摸了一节课的鱼，算是把 <a href="https://image-hub.pages.dev/">网站</a> 弄上线了。</p><p>结果，上去一看，人麻了。</p><p><img src="https://chocolateater.github.io/PicHub//202409292101442.png" alt="image-20240929210107498"></p><p>后来一查 README，蚌埠住了。</p><p><img src="https://chocolateater.github.io/PicHub//202409292101791.png"></p><p>《论 Fork 不看 README 的一百种坏处》</p><p>所以这个项目最后也流产了……</p><p>不过我启用了自动与主仓库同步更新，希望有一天大佬们能修好吧……</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 开发 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 笔记 </tag>
-            
-            <tag> 开发 </tag>
-            
-            <tag> 图床 </tag>
-            
-            <tag> Github </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>完美匹配 题解/学习笔记</title>
       <link href="/Anzhiyu/2024/10/03/%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D/"/>
       <url>/Anzhiyu/2024/10/03/%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D/</url>
@@ -108,6 +77,37 @@
             <tag> 算法 </tag>
             
             <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Github 图床折腾手记</title>
+      <link href="/Anzhiyu/2024/10/03/Github%E5%9B%BE%E5%BA%8A%E6%8A%98%E8%85%BE%E6%89%8B%E8%AE%B0/"/>
+      <url>/Anzhiyu/2024/10/03/Github%E5%9B%BE%E5%BA%8A%E6%8A%98%E8%85%BE%E6%89%8B%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>图床，一个我个人经常使用，但是又没有固定选择的东西。</p><p>之前尝试过 <a href="https://www.luogu.com.cn/image">洛谷图床</a>，<a href="https://www.imgse.com/">路过图床</a>，<a href="https://sm.ms/">SM.MS</a> 等一些国内可以访问且相对知名的图床。</p><p>洛谷图床主要是验证码很烦，储存空间也小，而且不支持读取剪贴板，所以最后就弃坑了。</p><p>路过图床之前是我的主力图床，使用相当方便（除了有时候网站访问很慢），但是每天只能传 8 张图，日常使用还行，写题解（个人喜欢在题解里加入一堆图片），博客的时候完全不够用啊……</p><p>所以后来发现了 SM.MS，同样很好用，服务器架在国外但是速度甚至比路过图床还快。没有上传数量限制，但是每个用户限制 5 GB 储存空间，完全够用，但是有个限制在哪就挺烦的……</p><p><img src="https://chocolateater.github.io/PicHub/202409292036840.png" alt="image-20240929203605657"></p><p><em>SM.MS 用户界面</em></p><p>而且最重要的是以上所有图床都和 Typora&#x2F;TypeDown 不兼容…… 导致我得浏览器——编辑器来回切换……</p><p>懒，而且嫌烦，所以最终，我找到了 PicGo。</p><p><img src="https://chocolateater.github.io/PicHub/202409292035835.png"></p><p><em>PicGo 用户界面</em></p><p>第一次认识 PicGo 是在刚入坑 Github 的时候，那时候的主力 Markdown 编辑器还是 TypeDown，折腾过一天用于配置 PicGo，但是最后没成功。现在想想可能是当时开着加速器导致上传证书验证失败，而且那会儿也非常的愚蠢，报错了也没去百度，最后就不了了之了。</p><p>后来，突发奇想，想整个 Typora 玩玩，但是没钱……</p><p>所以又折腾了半天，手动破解了 Typora。然后发现能换主题欸 (╹ڡ╹ )，于是又花了半天翻找各种主题……</p><p><del>我们颜值至上主义者是这样的</del></p><p>最后的最后，我在 Typora 的设置里发现了这样的一小句话：</p><p><img src="https://chocolateater.github.io/PicHub/202409292040158.png" alt="image-20240929204011114"></p><p>当时不知道怎么就脑抽了…… 把 PicGo 下了回来。</p><p>浅浅配置好之后就十分兴奋的上传了一张图片试试。</p><p>不出意外，出意外了。</p><p><img src="https://chocolateater.github.io/PicHub/202409292042905.png" alt="image-20240929204209862"></p><p>不过起码会翻译了，跑去百度翻译一查，“无法验证第一证书”。</p><p>第一反应是我的 Github Token 权限没配置好，所以最后把原来的 Fine-grained Token 换成了权限更高的 Classical Token（教程是这么说的……），顺带把能勾选的选项全勾上了。</p><p>但回去，一看，还是不行，报错的提示都一样。</p><p>算了，还得是度娘。</p><p>查出来的结果也很离谱，居然是加速器的问题……</p><p>把加速器关了就没这回事了。</p><p>离谱。</p><p>至此，我以为总算搞定了…… 随手就把 Typora 和 PicGo 绑上了。</p><p>测试了一下，能上传，于是开始兴高采烈的搬迁图库。</p><p>最后链接提出来一看，白干~</p><p><img src="https://chocolateater.github.io/PicHub//202409292051438.png" alt="image-20240929205104261"></p><p>学乖了，直接百度。</p><p>结果是这个玩意儿需要梯子。</p><p>我寻思梯子我有归我有，但最后这坨东西是要放洛谷上去的，总不能让每个看的人都先挂上梯子吧…… <del>看起来像是推销节点的</del></p><blockquote><p>由于一些不可抗力，请您在阅读本篇博客前准备好一个能够访问 <a href="https://raw.githubusercontent.com/">https://raw.githubusercontent.com</a> 的**，我们推荐您使用 **节点，0.3 KB&#x2F;S 带宽不限速，每月只要 999 ~ 注册时优惠邀请码记得填 **** ……</p></blockquote><p>听起来就离谱。</p><p>所以当时我就想到一些奇技淫巧。</p><p>比如，把这个图床包装成一个基于 Github Pages 的网站。</p><p>正好<del>我会</del> Ai会 写 Ci（提交时运行的工作流），每次上传图片的时候自动部署，简单快捷，主要是不要动手，完全自动化。</p><p>效果不错，PicGo 也可以自定义域名，结合起来运行的很流畅。</p><p>唯一可惜是 Github 部署 Pages 需要一点时间，不过我觉得问题不大。</p><p>至此，终于搞定了。</p><p>虽然听起来挺少，但也折腾了我一个星期呢…… QAQ</p><hr><p>事实上，此前我还尝试过基于 TeleGraph 的自建图床，当时是被 <a href="https://www.luogu.com/user/1056150">黑客少年</a> 的 <a href="https://image.zhaohonghao-qwq.com/">图床</a> 忽悠入坑的，因为感觉还不错，而且据说储存空间无限，所以就心动了……</p><p>网上扒了教程，注册了 CF 的账号，摸了一节课的鱼，算是把 <a href="https://image-hub.pages.dev/">网站</a> 弄上线了。</p><p>结果，上去一看，人麻了。</p><p><img src="https://chocolateater.github.io/PicHub//202409292101442.png" alt="image-20240929210107498"></p><p>后来一查 README，蚌埠住了。</p><p><img src="https://chocolateater.github.io/PicHub//202409292101791.png"></p><p>《论 Fork 不看 README 的一百种坏处》</p><p>所以这个项目最后也流产了……</p><p>不过我启用了自动与主仓库同步更新，希望有一天大佬们能修好吧……</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 开发 </tag>
+            
+            <tag> 图床 </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
